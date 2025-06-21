@@ -1,4 +1,6 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import ActiveFlights from "./ActiveFlights";
 
 interface AcarsMessage {
   id: number;
@@ -28,7 +30,7 @@ const dummyData: AcarsMessage[] = [
   }
 ];
 
-function App() {
+function Home() {
   return (
     <div className="App">
       <h1>Electron ACARS Viewer</h1>
@@ -51,6 +53,27 @@ function App() {
         </tbody>
       </table>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/active-flights">Active Flights</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/active-flights" element={<ActiveFlights />} />
+      </Routes>
+    </Router>
   );
 }
 
