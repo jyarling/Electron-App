@@ -1,4 +1,8 @@
 
+import { User } from 'lucide-react'
+import { DataTable } from './components'
+import type { Column } from './components'
+
 interface Flight {
   id: number;
   pilot: string;
@@ -14,29 +18,23 @@ const flights: Flight[] = [
 ];
 
 export default function ActiveFlights() {
+  const columns: Column<Flight>[] = [
+    {
+      key: 'pilot',
+      header: 'Pilot',
+      render: (row) => (
+        <span className="flex items-center gap-2"><User className="h-4 w-4" />{row.pilot}</span>
+      ),
+    },
+    { key: 'origin', header: 'Origin' },
+    { key: 'destination', header: 'Destination' },
+    { key: 'aircraft', header: 'Aircraft' },
+  ]
+
   return (
-    <div className="ActiveFlights">
-      <h1>Active Flights</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Pilot</th>
-            <th>Origin</th>
-            <th>Destination</th>
-            <th>Aircraft</th>
-          </tr>
-        </thead>
-        <tbody>
-          {flights.map((flight) => (
-            <tr key={flight.id}>
-              <td>{flight.pilot}</td>
-              <td>{flight.origin}</td>
-              <td>{flight.destination}</td>
-              <td>{flight.aircraft}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="ActiveFlights space-y-4">
+      <h1 className="text-2xl font-bold">Active Flights</h1>
+      <DataTable data={flights} columns={columns} onEdit={() => {}} onDelete={() => {}} />
     </div>
-  );
+  )
 }
