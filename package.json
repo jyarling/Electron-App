@@ -14,11 +14,11 @@
     "postinstall": "cd app && npm install"
   },
   "dependencies": {
-    "electron": "^30.0.1"
+    "electron": "^36.5.0"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2",
-    "wait-on": "^7.1.1",
-    "electron-builder": "^26.0.0"
+    "concurrently": "^9.1.2",
+    "wait-on": "^8.0.3",
+    "electron-builder": "^26.0.12"
   }
 }
