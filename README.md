@@ -26,32 +26,3 @@ npm run dist
 
 The compiled files will be produced using `electron-builder`.
 
-## Testing the Application
-
-After cloning or downloading the repository you can verify that everything works
-by running the application in development mode. Make sure you have a recent
-version of Node.js installed and then follow these steps:
-
-```bash
-# install dependencies
-npm install
-
-# launch the React dev server and Electron
-npm run dev
-```
-
-Electron will open a window once the Vite dev server is available at
-<http://localhost:5173>. You can interact with the UI to confirm that the ACARS
-viewer loads correctly.
-
-If you want to test the production build instead, package the app and run the
-generated executable:
-
-```bash
-npm run dist
-# on Windows: dist/win-unpacked/electron-app.exe
-# on macOS:   dist/mac/Electron ACARS Viewer.app
-```
-
-Launching the packaged application lets you test it in an environment that is
-closer to what end users will run.
