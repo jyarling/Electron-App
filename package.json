@@ -11,7 +11,7 @@
     "dist": "npm run build && electron-builder",
     "verify": "node scripts/verify.js",
     "test": "npm run verify",
-    "postinstall": "npm --prefix app install"
+    "postinstall": "cd app && npm install"
   },
   "dependencies": {
     "electron": "^30.0.1"
