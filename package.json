@@ -1,0 +1,21 @@
+{
+  "name": "electron-app",
+  "version": "0.1.0",
+  "main": "electron/main.js",
+  "scripts": {
+    "start:react": "npm --prefix app run dev",
+    "start:electron": "wait-on http://localhost:5173 && electron .",
+    "dev": "concurrently -k \"npm run start:react\" \"npm run start:electron\"",
+    "build": "npm --prefix app run build",
+    "pack": "npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder"
+  },
+  "dependencies": {
+    "electron": "^30.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "wait-on": "^7.1.1",
+    "electron-builder": "^26.0.0"
+  }
+}
