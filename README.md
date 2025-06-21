@@ -26,14 +26,3 @@ npm run dist
 
 The compiled files will be produced using `electron-builder`.
 
-## Verification
-
-To verify that the application builds and launches correctly in production mode,
-run:
-
-```bash
-npm run verify
-```
-
-This script builds the React application and starts Electron in a headless
-environment for a few seconds to ensure no startup errors occur.
