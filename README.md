@@ -6,7 +6,9 @@ Flight Simulator.
 
 ## Development
 
-Install dependencies and start the development environment:
+Install dependencies and start the development environment. Running `npm install`
+in the project root also installs packages for the React front‑end located in the
+`app` directory:
 
 ```bash
 npm install
@@ -15,6 +17,10 @@ npm run dev
 
 This command runs the React development server and launches Electron once the
 app is available on <http://localhost:5173>.
+
+The root `npm install` triggers a `postinstall` step that installs the React
+dependencies in `app`. If you skip that step, run `npm install` inside
+`app` manually.
 
 ## Building
 

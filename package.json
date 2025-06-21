@@ -10,7 +10,8 @@
     "pack": "npm run build && electron-builder --dir",
     "dist": "npm run build && electron-builder",
     "verify": "node scripts/verify.js",
-    "test": "npm run verify"
+    "test": "npm run verify",
+    "postinstall": "npm --prefix app install"
   },
   "dependencies": {
     "electron": "^30.0.1"
