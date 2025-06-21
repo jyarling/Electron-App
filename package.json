@@ -8,7 +8,9 @@
     "dev": "concurrently -k \"npm run start:react\" \"npm run start:electron\"",
     "build": "npm --prefix app run build",
     "pack": "npm run build && electron-builder --dir",
-    "dist": "npm run build && electron-builder"
+    "dist": "npm run build && electron-builder",
+    "verify": "node scripts/verify.js",
+    "test": "npm run verify"
   },
   "dependencies": {
     "electron": "^30.0.1"
