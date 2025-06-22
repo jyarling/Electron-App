@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import ActiveFlights from "./ActiveFlights";
+import UiElements from "./UiElements";
 
 interface AcarsMessage {
   id: number;
@@ -67,11 +68,15 @@ function App() {
           <li>
             <Link to="/active-flights">Active Flights</Link>
           </li>
+          <li>
+            <Link to="/elements">UI Elements</Link>
+          </li>
         </ul>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/active-flights" element={<ActiveFlights />} />
+        <Route path="/elements" element={<UiElements />} />
       </Routes>
     </Router>
   );
