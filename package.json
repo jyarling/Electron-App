@@ -18,7 +18,28 @@
   },
   "devDependencies": {
     "concurrently": "^9.1.2",
-    "wait-on": "^8.0.3",
-    "electron-builder": "^26.0.12"
+    "electron-builder": "^26.0.12",
+    "wait-on": "^8.0.3"
+  },
+  "build": {
+    "appId": "com.virtualairline.vastats",
+    "productName": "VA Stats",
+    "directories": {
+      "buildResources": "assets"
+    },
+    "files": [
+      "electron/**/*",
+      "app/dist/**/*",
+      "node_modules/**/*"
+    ],
+    "linux": {
+      "target": "AppImage"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    }
   }
 }

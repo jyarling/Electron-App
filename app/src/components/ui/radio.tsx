@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { cn } from '../utils'
 
-export interface RadioProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+export type RadioProps = React.InputHTMLAttributes<HTMLInputElement>
 
 export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
   function Radio({ className, ...props }, ref) {
